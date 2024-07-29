@@ -22,11 +22,17 @@ def is_admin() -> bool:
 
 
 def run_python_script_as_admin(script_path: str, *parameters):
+    """
+    non-block
+    """
     parameter = script_path + " " + " ".join(str(i) for i in parameters)
     return run_as_admin(sys.executable, parameter)
 
 
 def run_as_admin(exe: str, parameters: str = ""):
+    """
+    non-block
+    """
     return ctypes.windll.shell32.ShellExecuteW(None, "runas", exe, parameters, None, 1)
 
 
@@ -81,7 +87,7 @@ def listen(port: int) -> list[bytes]:
 
 def send_output(port: int, command: str):
     """
-    send output to server at "localhost:{port}"
+    execute the command, and send output to server (set up by `listen`) at "localhost:{port}"
     """
     data = sp.run(command, shell=True, stdout=sp.PIPE, timeout=10)
     send_data(port, data.stdout)

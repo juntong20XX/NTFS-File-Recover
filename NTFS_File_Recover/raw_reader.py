@@ -1,3 +1,6 @@
+"""
+functions for parsing Raw Images
+"""
 import numpy as np
 
 import sys
