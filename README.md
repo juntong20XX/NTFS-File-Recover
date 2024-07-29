@@ -1,4 +1,6 @@
-typora-copy-images-to: ./markdown images
+---
+typora-copy-images-to: ./images
+---
 
 # NTFS-File-Recover
 
@@ -14,19 +16,19 @@ Script is Windows Only.
 
 Install FTK Imager, and create a Raw-Type Image of the logical volume which your target file located.
 
-![Create Raw Image](markdown images/Create Raw Image.png)
+![Create Raw Image](./images/CreateRawImage.png)
 
 Next, mount the Image as a logical volume.
 
-![example raw image](markdown images/example raw image.png)
+![Example Raw Image](./images/ExampleRawImage.png)
 
-![Mount Image File](markdown images/Mount Image File.png)
+![Mount Image File](./images/MountImageFile.png)
 
 In this example, the path of Raw Image is `E:\d-test\d-teat.001` and the target file is `F:\fake-log - Copy - Copy - Copy.txt`.
 
 The original content of the file is shown in the left pane of the image below. I copied the file, modified the content and saved it.
 
-![example file](markdown images/example file.png)
+![Example File](./images/ExampleFile.png)
 
 ### Run Scripts
 
