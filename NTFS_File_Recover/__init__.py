@@ -9,9 +9,9 @@ import os
 import numpy as np
 
 
-def main(raw_path: str, file_path: str, port: int = 7891, encoding="ascii") -> bytes:
+def get_bytes(raw_path: str, file_path: str, port: int = 7891, encoding="ascii") -> bytes:
     """
-
+    Get the binary of the file.
     :param raw_path:
     :param file_path:
     :param port:

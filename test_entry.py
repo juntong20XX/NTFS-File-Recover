@@ -2,12 +2,12 @@
 The test entry.
 """
 
-from NTFS_File_Recover import main
+from NTFS_File_Recover import get_bytes
 
 raw_path = r"E:\d-test\d-test.001.raw"
 file_name = r"F:\fake-log - Copy - Copy - Copy.txt"
 
-b = main(raw_path, file_name)
+b = get_bytes(raw_path, file_name)
 
 with open("output.txt", "wb") as fp:
     fp.write(b)
