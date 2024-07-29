@@ -23,7 +23,7 @@ def is_admin() -> bool:
 
 def run_python_script_as_admin(script_path: str, *parameters):
     parameter = script_path + " " + " ".join(str(i) for i in parameters)
-    run_as_admin(sys.executable, parameter)
+    return run_as_admin(sys.executable, parameter)
 
 
 def run_as_admin(exe: str, parameters: str = ""):
