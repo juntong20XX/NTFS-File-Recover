@@ -26,5 +26,8 @@ def get_bytes(raw_path: str, file_path: str, port: int = 7891, encoding="ascii")
     file_name_flag = np.array(get_file_name_flag(os.path.basename(file_path), encoding), dtype=np.uint8)
     find = find_subsequence(file, file_name_flag)
     length = len(file_name_flag)
-    ending = find_subsequence(file[find + length:], END_FLAG_ARRAY, times=2) + find
+    try:
+        ending = find_subsequence(file[find + length:], END_FLAG_ARRAY, times=2) + find
+    except ValueError:
+        ending = None
     return file[find + length:ending].tobytes()
